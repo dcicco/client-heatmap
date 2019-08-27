@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="title">
+  <h1>**** Heatmap</h1>
+</div>
+
+  <ngx-charts-heat-map
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [innerPadding]="innerPadding"
+  [trimXAxisTicks]="trimXAxisTicks">
+  </ngx-charts-heat-map>
+<div class="filterCont">
+  <select #riskList [(ngModel)]="selectedOption">
+    <option *ngFor="let o of options">
+      {{o.name}}
+    </option>
+  </select>
+  <button #filterBtn (click)="filterData()">Filter List</button>
+  <button #resetBtn (click)="resetData()">Reset Data</button>
+</div>
+<router-outlet></router-outlet>
